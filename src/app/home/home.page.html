@@ -1,0 +1,13 @@
+<ion-content>
+  <main class="home">
+    <p class="home__eyebrow">Práctica · Ionic + Angular</p>
+    <h1 class="home__title">Diseño con Sass</h1>
+    <p class="home__intro">Una página, tres elementos y estilos que se compilan al guardar.</p>
+    <div class="home__actions">
+      <ion-button class="home__button" (click)="clicks = clicks + 1">Probar botón</ion-button>
+    </div>
+    <p class="home__status" role="status">{{ clicks === 0 ? 'Pulsa el botón para probarlo.' : 'Pulsaciones: ' + clicks }}</p>
+    <img class="home__image" src="assets/paisaje.svg" width="720" height="420" alt="Ilustración de montañas, un lago y un sol al atardecer">
+    <p class="home__caption">Sass · variables, mixin y anidamiento</p>
+  </main>
+</ion-content>

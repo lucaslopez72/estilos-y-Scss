@@ -1,0 +1,69 @@
+@use '../../theme/tokens' as theme
+
+:host
+  display: block
+
+ion-content
+  --background: #f4f7fa
+
+.home
+  max-width: 920px
+  margin-inline: auto
+  padding: clamp(24px, 6vw, 64px) 24px
+  color: theme.$ink
+
+  &__eyebrow, &__intro, &__caption
+    text-align: center
+
+  &__eyebrow
+    font-size: 12px
+    letter-spacing: .15em
+    text-transform: uppercase
+
+  // Requisito: rojo, mayúsculas y centrado.
+  &__title
+    color: theme.$title-red
+    text-transform: uppercase
+    text-align: center
+    font-size: clamp(28px, 5vw, 48px)
+    font-weight: 800
+
+  &__intro
+    line-height: 1.6
+
+  // Flex alinea el botón al extremo derecho del contenedor.
+  &__actions
+    display: flex
+    justify-content: flex-end
+    margin-top: 32px
+
+  &__button
+    // Las variables CSS atraviesan el Shadow DOM de Ionic.
+    --background: #{theme.$button-blue}
+    --background-hover: #0d47a1
+    --background-activated: #0d47a1
+    --color: #fff
+    --border-radius: 10px
+    cursor: pointer
+
+    &::part(native):focus-visible
+      outline: 3px solid theme.$ink
+      outline-offset: 3px
+
+  &__status
+    text-align: right
+    min-height: 24px
+    font-size: 13px
+
+  // Imagen centrada; borde verde exacto de 3 píxeles.
+  &__image
+    @include theme.centered(100%)
+    max-width: 720px
+    height: auto
+    box-sizing: border-box
+    border: 3px solid theme.$border-green
+    border-radius: 16px
+
+  &__caption
+    font-size: 12px
+    margin-top: 20px
